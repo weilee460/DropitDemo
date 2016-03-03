@@ -8,12 +8,11 @@
 
 import UIKit
 
-class DropitViewController: UIViewController {
+class DropitViewController: UIViewController, UIDynamicAnimatorDelegate {
 
     @IBOutlet weak var gameView: UIView!
     
-    //Add gravity
-    let gravity = UIGravityBehavior()
+
     
     /* notice this error
     //In below, it has error. because gameView has not initialized.
@@ -22,22 +21,20 @@ class DropitViewController: UIViewController {
     //solve upside problem.
     lazy var animator: UIDynamicAnimator = {
         let lazilyCreatedDynamicAnimator = UIDynamicAnimator(referenceView: self.gameView)
+        lazilyCreatedDynamicAnimator.delegate = self
         return lazilyCreatedDynamicAnimator
     }()
     
-    //As same reason.
-    lazy var collider: UICollisionBehavior = {
-        let lazilyCratedCollider = UICollisionBehavior()
-        lazilyCratedCollider.translatesReferenceBoundsIntoBoundary = true
-        return lazilyCratedCollider
-    }()
+    var dropitBehavior = DropitBehavior()
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        //add gravity
-        animator.addBehavior(gravity)
-        //add collider
-        animator.addBehavior(collider)
+        animator.addBehavior(dropitBehavior)
+    }
+    
+    //animator delegate
+    func dynamicAnimatorDidPause(animator: UIDynamicAnimator) {
+        removeCompletedRow()
     }
     
     
@@ -59,11 +56,45 @@ class DropitViewController: UIViewController {
         let dropView = UIView(frame: frame)
         dropView.backgroundColor = UIColor.random
         
-        gameView.addSubview(dropView)
-        //add gravity
-        gravity.addItem(dropView)
-        //add collider
-        collider.addItem(dropView)
+        dropitBehavior.addDrop(dropView)
+    }
+    
+    func removeCompletedRow()
+    {
+        var dropsToRemove = [UIView]()
+        var dropFrame = CGRect(x: 0, y: gameView.frame.maxY, width: dropSize.width, height: dropSize.height)
+        
+        repeat
+        //do
+        {
+            dropFrame.origin.y -= dropSize.height
+            dropFrame.origin.x = 0
+            var dropsFound = [UIView]()
+            var rowIsComplete = true
+            for _ in 0 ..< dropsPerRow
+            {
+                if let hitView = gameView.hitTest(CGPoint(x: dropFrame.midX, y: dropFrame.midY), withEvent: nil)
+                {
+                    if hitView.superview == gameView
+                    {
+                        dropsFound.append(hitView)
+                    }
+                    else
+                    {
+                        rowIsComplete = false
+                    }
+                }
+                dropFrame.origin.x += dropSize.width
+            }
+            if rowIsComplete {
+                dropsToRemove += dropsFound
+            }
+        } while (dropsToRemove.count == 0 && dropFrame.origin.y > 0)
+        
+        for drop in dropsToRemove {
+            dropitBehavior.removeDrop(drop)
+        }
+        
     }
 
 }

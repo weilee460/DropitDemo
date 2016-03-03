@@ -12,6 +12,7 @@
 		2E8ADBF01C87C66200F7F612 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 2E8ADBEF1C87C66200F7F612 /* Assets.xcassets */; };
 		2E8ADBF31C87C66200F7F612 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 2E8ADBF11C87C66200F7F612 /* LaunchScreen.storyboard */; };
 		2E8ADBFB1C87C72E00F7F612 /* DropitViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2E8ADBFA1C87C72E00F7F612 /* DropitViewController.swift */; };
+		2E8ADBFD1C87D4C800F7F612 /* DropitBehavior.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2E8ADBFC1C87D4C800F7F612 /* DropitBehavior.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -22,6 +23,7 @@
 		2E8ADBF21C87C66200F7F612 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		2E8ADBF41C87C66200F7F612 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		2E8ADBFA1C87C72E00F7F612 /* DropitViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DropitViewController.swift; sourceTree = "<group>"; };
+		2E8ADBFC1C87D4C800F7F612 /* DropitBehavior.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DropitBehavior.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -57,6 +59,7 @@
 				2E8ADBE81C87C66200F7F612 /* AppDelegate.swift */,
 				2E8ADBEC1C87C66200F7F612 /* Main.storyboard */,
 				2E8ADBFA1C87C72E00F7F612 /* DropitViewController.swift */,
+				2E8ADBFC1C87D4C800F7F612 /* DropitBehavior.swift */,
 				2E8ADBEF1C87C66200F7F612 /* Assets.xcassets */,
 				2E8ADBF11C87C66200F7F612 /* LaunchScreen.storyboard */,
 				2E8ADBF41C87C66200F7F612 /* Info.plist */,
@@ -137,6 +140,7 @@
 			files = (
 				2E8ADBFB1C87C72E00F7F612 /* DropitViewController.swift in Sources */,
 				2E8ADBE91C87C66200F7F612 /* AppDelegate.swift in Sources */,
+				2E8ADBFD1C87D4C800F7F612 /* DropitBehavior.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

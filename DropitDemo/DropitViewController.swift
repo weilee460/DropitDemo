@@ -32,11 +32,21 @@ class DropitViewController: UIViewController, UIDynamicAnimatorDelegate {
         willSet {
             if attachment != nil { //add by myself, not the same with Stanford lecture
                 animator.removeBehavior(attachment!)
+                gameView.setPath(nil, named: PathName.Attachment)
             }
         }
         didSet {
             if attachment != nil {
                 animator.addBehavior(attachment!)
+                attachment?.action = { [unowned self] in
+                    if let attachedView = self.attachment?.items.first as? UIView
+                    {
+                        let path = UIBezierPath()
+                        path.moveToPoint(self.attachment!.anchorPoint)
+                        path.addLineToPoint(attachedView.center)
+                        self.gameView.setPath(path, named: PathName.Attachment)
+                    }
+                }
             }
             
         }
@@ -49,6 +59,7 @@ class DropitViewController: UIViewController, UIDynamicAnimatorDelegate {
     
     struct PathName {
         static let MiddleBarrier = "Middle Barrier"
+        static let Attachment = "Attachment"
     }
     
     override func viewDidLayoutSubviews() {

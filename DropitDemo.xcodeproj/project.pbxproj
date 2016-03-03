@@ -13,6 +13,7 @@
 		2E8ADBF31C87C66200F7F612 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 2E8ADBF11C87C66200F7F612 /* LaunchScreen.storyboard */; };
 		2E8ADBFB1C87C72E00F7F612 /* DropitViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2E8ADBFA1C87C72E00F7F612 /* DropitViewController.swift */; };
 		2E8ADBFD1C87D4C800F7F612 /* DropitBehavior.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2E8ADBFC1C87D4C800F7F612 /* DropitBehavior.swift */; };
+		2E8ADBFF1C88187400F7F612 /* BezierPathsView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2E8ADBFE1C88187400F7F612 /* BezierPathsView.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -24,6 +25,7 @@
 		2E8ADBF41C87C66200F7F612 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		2E8ADBFA1C87C72E00F7F612 /* DropitViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DropitViewController.swift; sourceTree = "<group>"; };
 		2E8ADBFC1C87D4C800F7F612 /* DropitBehavior.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DropitBehavior.swift; sourceTree = "<group>"; };
+		2E8ADBFE1C88187400F7F612 /* BezierPathsView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = BezierPathsView.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -60,6 +62,7 @@
 				2E8ADBEC1C87C66200F7F612 /* Main.storyboard */,
 				2E8ADBFA1C87C72E00F7F612 /* DropitViewController.swift */,
 				2E8ADBFC1C87D4C800F7F612 /* DropitBehavior.swift */,
+				2E8ADBFE1C88187400F7F612 /* BezierPathsView.swift */,
 				2E8ADBEF1C87C66200F7F612 /* Assets.xcassets */,
 				2E8ADBF11C87C66200F7F612 /* LaunchScreen.storyboard */,
 				2E8ADBF41C87C66200F7F612 /* Info.plist */,
@@ -138,6 +141,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				2E8ADBFF1C88187400F7F612 /* BezierPathsView.swift in Sources */,
 				2E8ADBFB1C87C72E00F7F612 /* DropitViewController.swift in Sources */,
 				2E8ADBE91C87C66200F7F612 /* AppDelegate.swift in Sources */,
 				2E8ADBFD1C87D4C800F7F612 /* DropitBehavior.swift in Sources */,

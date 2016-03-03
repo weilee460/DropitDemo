@@ -12,6 +12,26 @@ class DropitViewController: UIViewController {
 
     @IBOutlet weak var gameView: UIView!
     
+    //Add gravity
+    let gravity = UIGravityBehavior()
+    
+    /* notice this error
+    //In below, it has error. because gameView has not initialized.
+    var animator: UIDynamicAnimator = UIDynamicAnimator(referenceView: gameView)
+    */
+    //solve upside problem.
+    lazy var animator: UIDynamicAnimator = {
+        let lazilyCreatedDynamicAnimator = UIDynamicAnimator(referenceView: self.gameView)
+        return lazilyCreatedDynamicAnimator
+    }()
+    
+    override func viewDidLoad() {
+        super.viewDidLoad()
+        //add gravity
+        animator.addBehavior(gravity)
+    }
+    
+    
     var dropsPerRow = 10
     
     var dropSize: CGSize {
@@ -31,6 +51,8 @@ class DropitViewController: UIViewController {
         dropView.backgroundColor = UIColor.random
         
         gameView.addSubview(dropView)
+        //
+        gravity.addItem(dropView)
     }
 
 }
